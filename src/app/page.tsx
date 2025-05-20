@@ -1,5 +1,5 @@
 import { signIn, auth } from "@/auth";
-
+import Image from "next/image";
 export default async function Home() {
   const session = await auth();
 
@@ -9,7 +9,7 @@ export default async function Home() {
         <div className="flex flex-col items-center gap-4">
           <div className="flex items-center gap-4">
             {session.user?.image && (
-              <img
+              <Image
                 src={session.user.image}
                 alt="User avatar"
                 width={40}
@@ -51,7 +51,6 @@ export default async function Home() {
           </button>
         </form>
       )}
-      98989
     </div>
   );
 }
